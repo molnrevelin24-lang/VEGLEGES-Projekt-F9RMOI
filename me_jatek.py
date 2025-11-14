@@ -106,5 +106,6 @@ class MEjatek:
             align="center", font=("Arial", 16, "normal")
         )
 
+
         self.aktiv = False
         self.ablak.onkey(self.inditas, "i")
