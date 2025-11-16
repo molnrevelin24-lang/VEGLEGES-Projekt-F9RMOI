@@ -68,6 +68,11 @@ class MEjatek:
         self.aktiv = True
         self.ablak.onscreenclick(self.meres)
 
+    def mentes(self, szoveg):
+        from me_f9rmoi import ME_mentes
+        siker = ME_mentes(szoveg)
+
+
     def meres(self, x, y):
         if not self.aktiv:
             return
@@ -80,6 +85,9 @@ class MEjatek:
 
         if self.probaszam == self.max_proba:
             atlag = sum(self.eredmenyek) / self.max_proba
+
+            szoveg = f"Utolsó: {reakcio:.3f} mp | Átlag: {atlag:.3f} mp"
+            self.mentes(szoveg)
 
             self.felirat.clear()
             self.ablak.bgcolor("black")
@@ -98,6 +106,8 @@ class MEjatek:
             self.ablak.onkey(self.kezdokep, "i")
             return
 
+
+
         self.felirat.clear()
         self.ablak.bgcolor("black")
         self.felirat.goto(0, 0)
@@ -106,6 +116,10 @@ class MEjatek:
             align="center", font=("Arial", 16, "normal")
         )
 
-
         self.aktiv = False
         self.ablak.onkey(self.inditas, "i")
+
+
+
+
+
